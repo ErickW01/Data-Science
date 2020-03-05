@@ -11,7 +11,6 @@ with open("myData.txt", "r") as f:
 		xcoor.append(row[0])
 		ycoor.append(row[1])
 
-#print("Test:\n")
 for x in range(len(xcoor)):
 	print (xcoor[x], ycoor[x])
 
@@ -37,7 +36,7 @@ b = y_mean - m*x_mean
 
 t = np.linspace(1000, 2500, 20)
 
-plt.axis([1000,2500,195000, 410000])
+plt.axis([min(xcoor)-100,max(xcoor)+150,min(ycoor)-500, max(ycoor)+150])
 
 plt.plot(xcoor,ycoor,"ro", t, m*t+ b, "b-")
 plt.show()
